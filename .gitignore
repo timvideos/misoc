@@ -13,3 +13,4 @@ software/include/generated/*.ld
 software/include/generated/*.mak
 *.vcd
 outgoing
+_impactbatch.log
