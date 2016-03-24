@@ -6,6 +6,7 @@ build/*
 *.elf
 *.bin
 *.fbi
+*.tsi
 tools/flterm
 tools/byteswap
 software/include/generated/*.h
