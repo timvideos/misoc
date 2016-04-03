@@ -1,3 +1,4 @@
+import os
 from migen.fhdl.std import *
 from migen.bank.description import CSRStatus
 
@@ -6,13 +7,12 @@ def get_cpu_mak(cpu_type):
     if cpu_type == "lm32":
         triple = "lm32-elf"
         cpuflags = "-mbarrel-shift-enabled -mmultiply-enabled -mdivide-enabled -msign-extend-enabled"
-        clang = ""
     elif cpu_type == "or1k":
-        triple = "or1k-linux"
-        cpuflags = "-mhard-mul -mhard-div -mror -mffl1 -maddc"
-        clang = "1"
+        triple = "or1k-elf"
+        cpuflags = "-mhard-mul -mhard-div -mror"
     else:
         raise ValueError("Unsupported CPU type: "+cpu_type)
+    clang = os.getenv("CLANG", "")
     return "TRIPLE={}\nCPU={}\nCPUFLAGS={}\nCLANG={}".format(triple, cpu_type, cpuflags, clang)
 
 
