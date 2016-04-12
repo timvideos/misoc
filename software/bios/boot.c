@@ -250,8 +250,8 @@ void flashboot(void)
 	unsigned int crc;
 	unsigned int got_crc;
 
-	printf("Booting from flash...\n");
 	flashbase = (unsigned int *)FLASH_BOOT_ADDRESS;
+	printf("Booting from flash (0x%p)...\n", flashbase);
 	length = *flashbase++;
 	crc = *flashbase++;
 	if((length < 32) || (length > 4*1024*1024)) {
