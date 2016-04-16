@@ -83,6 +83,7 @@ class SoC(Module):
                 raise ValueError("Unsupported CPU type: {}".format(cpu_type))
             self.add_wb_master(self.cpu_or_bridge.ibus)
             self.add_wb_master(self.cpu_or_bridge.dbus)
+            self.add_wb_master(self.cpu_or_bridge.debug)
 
             if integrated_rom_size:
                 self.submodules.rom = wishbone.SRAM(integrated_rom_size, read_only=True)

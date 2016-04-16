@@ -10,3 +10,6 @@
 [submodule "software/unwinder"]
 	path = software/unwinder
 	url = https://github.com/whitequark/libunwind
+[submodule "extcores/mor1kx/adv_debug_sys"]
+	path = extcores/mor1kx/adv_debug_sys
+	url = https://github.com/olofk/adv_debug_sys

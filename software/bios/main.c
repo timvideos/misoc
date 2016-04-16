@@ -556,6 +556,13 @@ int main(int i, char **c)
 	puts("\nMiSoC BIOS   http://m-labs.hk\n"
 	"(c) Copyright 2007-2014 Sebastien Bourdeauducq");
 	printf("Revision %08x built "__DATE__" "__TIME__"\n\n", MSC_GIT_ID);
+#ifdef __lm32__
+	printf("Running on lm32.\n");
+#elif __or1k__
+	printf("Running on or1k.\n");
+#else
+	printf("Unknown architecture.\n");
+#endif
 	crcbios();
 	id_print();
 #ifdef CSR_ETHMAC_BASE
